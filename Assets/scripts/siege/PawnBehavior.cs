@@ -6,25 +6,49 @@ using UnityEngine.Animations;
 
 public class PawnBehavior : MonoBehaviour
 {
+    [SerializeField]private UnitType unit;
+
+    [Header("stats")]
+    private float range;
+    private float speed;
+    private float attackSpeed;
+    private int damage;
+    private int health;
+    private float bodyRecoveryChance;
 
     private NavMeshAgent agent;
     private EnemyDesignation comander;
 
     private SpriteRenderer design;
+    private NavMeshAgent nav;
+    [Header("monitor")]
     [SerializeField]private Transform target;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        range= unit.range;
+        speed= unit.speed;
+        attackSpeed= unit.attackSpeed;
+        damage= unit.damage;
+        health= unit.health;
+        bodyRecoveryChance= unit.bodyRecoveryChance;
+
+        nav = GetComponent<NavMeshAgent>();
+        nav.speed = speed;
+        nav.stoppingDistance = range-1;
 
         AimConstraint constraint = GetComponentInChildren<AimConstraint>();
         Debug.Log(constraint.name);
+
+
         ConstraintSource source = new ConstraintSource();
-        Debug.Log(Camera.main.transform);
         source.sourceTransform = Camera.main.transform;
         source.weight = 1;
-        constraint.SetSource(1,source);
+
+        // Set the new source to the AimConstraint (you can use index 0 or another index if needed)
+        constraint.SetSource(0, source);
+
 
         design = GetComponentInChildren<SpriteRenderer>();
         comander = gameObject.GetComponentInParent<EnemyDesignation>();
