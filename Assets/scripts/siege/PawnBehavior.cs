@@ -6,15 +6,16 @@ using UnityEngine.Animations;
 
 public class PawnBehavior : MonoBehaviour
 {
-    [SerializeField]private UnitType unit;
+    [SerializeField]public UnitType unit;
 
-    [Header("stats")]
     private float range;
     private float speed;
     private float attackSpeed;
     private int damage;
-    private int health;
+    private int maxHealth;
     private float bodyRecoveryChance;
+    private int health;
+
 
     private NavMeshAgent agent;
     private EnemyDesignation comander;
@@ -23,7 +24,11 @@ public class PawnBehavior : MonoBehaviour
     private NavMeshAgent nav;
     [Header("monitor")]
     [SerializeField]private Transform target;
+    [SerializeField] private float distance;
 
+    private float timesincelastattack;
+    private Animator animator;
+    public bool isdead = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,12 +36,14 @@ public class PawnBehavior : MonoBehaviour
         speed= unit.speed;
         attackSpeed= unit.attackSpeed;
         damage= unit.damage;
-        health= unit.health;
-        bodyRecoveryChance= unit.bodyRecoveryChance;
+        health = unit.health;
+        maxHealth = unit.health;
+        bodyRecoveryChance = unit.bodyRecoveryChance;
 
         nav = GetComponent<NavMeshAgent>();
         nav.speed = speed;
         nav.stoppingDistance = range-1;
+        animator = GetComponentInChildren<Animator>();
 
         AimConstraint constraint = GetComponentInChildren<AimConstraint>();
         Debug.Log(constraint.name);
@@ -55,27 +62,74 @@ public class PawnBehavior : MonoBehaviour
         agent = gameObject.GetComponent<NavMeshAgent>();
     }
 
+    public void takeDamage(int damage)
+    {
+        health -= damage;
+        if(health <= 0)
+        {
+            animator.SetInteger("anim state", 3);
+            isdead = true;
+            Debug.Log(comander.victorycheack());
+        }
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
-        GameObject army = comander.GetEnemy();
-        Transform aim = null;
-        foreach (Transform T in army.GetComponentInChildren<Transform>())
+        
+        if (!isdead)
         {
-            if (aim == null)
+            animator.SetInteger("anim state", 0);
+            GameObject army = comander.GetEnemy();
+            Transform aim = null;
+            foreach (Transform T in army.GetComponentInChildren<Transform>())
             {
-                aim = T;
+
+                if (!T.GetComponent<PawnBehavior>().isdead)
+                {
+                    if (aim == null)
+                    {
+                        aim = T;
+                    }
+                }
+
             }
-        }
-        if (transform.position.x > aim.position.x)
-        {
-            design.flipX = false;
+
+            
+            if (aim != null)
+            {
+                if (transform.position.x > aim.position.x)
+                {
+                    design.flipX = false;
+                }
+                else
+                {
+                    design.flipX = true;
+                }
+
+                if ((transform.position - aim.position).magnitude >= range)
+                {
+                    animator.SetInteger("anim state", 1);
+                }
+                
+
+                target = aim;
+                distance = (transform.position - aim.position).magnitude;
+                agent.destination = aim.position;
+                timesincelastattack += Time.deltaTime;
+                if (timesincelastattack >= attackSpeed && (transform.position - aim.position).magnitude <= range)
+                {
+                    animator.SetInteger("anim state", 2);
+                    Debug.Log("hit");
+                    aim.GetComponent<PawnBehavior>().takeDamage(damage);
+                }
+            }
+
+            
         }
         else
         {
-            design.flipX = true;
+            agent.destination = transform.position;
         }
-        target = aim;
-        agent.destination = aim.position;
     }
+        
 }

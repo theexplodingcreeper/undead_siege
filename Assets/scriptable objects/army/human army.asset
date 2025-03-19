@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7c115ae73c35f94997a59a1e3e7263c, type: 3}
-  m_Name: man
+  m_Script: {fileID: 11500000, guid: 27594b42f0df07544a80ba390052bb66, type: 3}
+  m_Name: human army
   m_EditorClassIdentifier: 
-  animations: {fileID: 9100000, guid: 7e1eefdb27af9514fba6a273f45f1357, type: 2}
-  range: 3
-  speed: 3
-  attackSpeed: 1
-  damage: 1
-  health: 100
-  bodyRecoveryChance: 0
+  units:
+  - amount: 30
+    type: {fileID: 11400000, guid: 0aa6403e1d841cc408f85113f677121f, type: 2}
