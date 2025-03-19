@@ -13,5 +13,5 @@ public class armyDesignation : ScriptableObject
         
     }
 
-    [SerializeField]public unit[] units;
+    [SerializeField]public List<unit> units;
 }

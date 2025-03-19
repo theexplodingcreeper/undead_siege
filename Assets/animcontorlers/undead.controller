@@ -48,7 +48,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 66967b1272bf0744c92772de05e5a162, type: 2}
+  m_Motion: {fileID: 7400000, guid: d7da189bea63b9540b69a75d282538f1, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -74,7 +74,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 262c661e401401c429a54805f03e6814, type: 2}
+  m_Motion: {fileID: 7400000, guid: b5f0111f6d0492f4d96d8b377607f2f9, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -102,7 +102,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: bbabf142812a6af47979ac8374de8e75, type: 2}
+  m_Motion: {fileID: 7400000, guid: c22d10bb660ee034780a0aa2a9ab03d6, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -156,7 +156,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: effcf22f51c6dda4b92c00f96276cfa2, type: 2}
+  m_Motion: {fileID: 7400000, guid: 6737f8e9ba3843649a1f59d878f1193e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -176,13 +176,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: has died
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -276,7 +276,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 92ce8c089c1a3414c85e8ead21e8c966, type: 2}
+  m_Motion: {fileID: 7400000, guid: 622e6d6366eee184aaebfc85f07f1b92, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

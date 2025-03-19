@@ -12,5 +12,10 @@ public static class gamescript
 
 
     static public ReaserchOption current_research;
+
+    public static void cycleday()
+    {
+        //this script will scycle the day, giving us reseach points and smithing
+    }
     
 }
