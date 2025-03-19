@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7c115ae73c35f94997a59a1e3e7263c, type: 3}
-  m_Name: man
+  m_Name: undead soldier
   m_EditorClassIdentifier: 
-  animations: {fileID: 9100000, guid: 7e1eefdb27af9514fba6a273f45f1357, type: 2}
-  range: 3
-  speed: 3
-  attackSpeed: 1
+  animations: {fileID: 9100000, guid: e299eb78ffb1d9146b1907f578058b3d, type: 2}
+  range: 1
+  speed: 2
+  attackSpeed: 2
   damage: 1
-  health: 100
+  health: 200
   bodyRecoveryChance: 0
