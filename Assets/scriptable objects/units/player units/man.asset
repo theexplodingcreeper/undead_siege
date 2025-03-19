@@ -16,6 +16,6 @@ MonoBehaviour:
   range: 3
   speed: 3
   attackSpeed: 1
-  damage: 1
+  damage: 2
   health: 100
   bodyRecoveryChance: 0
