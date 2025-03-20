@@ -13,13 +13,14 @@ public class UndeadSelector : MonoBehaviour
 
     private int maxUndead;
     private int available_troops;
-    
+
     private SiegeControler siegeController;
 
     void Start()
     {
         available_troops = gamescript.available_undead - gamescript.reseachers - gamescript.forge - gamescript.gatheres;
         maxUndead = available_troops;
+
 
         // Set slider limits
         undeadSlider.minValue = 0;

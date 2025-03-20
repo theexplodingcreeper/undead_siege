@@ -8,6 +8,7 @@ public static class gamescript
     static public int undeadToSend;
 
 
+
     static public int reseachers;
     static public int forge;
     static public int gatheres;
