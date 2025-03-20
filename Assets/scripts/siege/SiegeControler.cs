@@ -14,7 +14,7 @@ public class SiegeControler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        BeguinSiege();
+        
     }
 
     // Update is called once per frame
