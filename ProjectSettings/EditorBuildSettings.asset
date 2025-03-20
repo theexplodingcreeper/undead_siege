@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/siege_map.unity
     guid: 5fdfbbe501f6ea6428cefc49ff8bf2d5
+  - enabled: 1
+    path: Assets/Scenes/credits.unity
+    guid: 33893bd59e22e65479d88228b36b2ed9
   m_configObjects: {}

@@ -27,5 +27,15 @@ public class start_button : MonoBehaviour
         Application.Quit();
     }
 
+    public void credits()
+    {
+        SceneManager.LoadScene("credits");
+    }
+
+    public void menu()
+    {
+        SceneManager.LoadScene("menu scene");
+    }
+
 }
 
