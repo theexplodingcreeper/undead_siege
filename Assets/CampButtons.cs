@@ -9,4 +9,8 @@ public class CampButtons : MonoBehaviour
     {
         SceneManager.LoadScene("siege_map");
     }
+    public void ToMenu()
+    {
+        SceneManager.LoadScene("menu scene");
+    }
 }
