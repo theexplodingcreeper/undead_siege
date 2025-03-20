@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class gamescript
 {
-    static public int available_undead;
+    static public int available_undead = 10;
 
     static public int reseachers;
     static public int forge;

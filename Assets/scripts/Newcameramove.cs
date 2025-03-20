@@ -16,10 +16,7 @@ public class SmoothFollow : MonoBehaviour
 
     private void Start()
     {
-        if (ButtonStartNew != null)
-        {
-            ButtonStartNew.onClick.AddListener(MoveToNextTarget);
-        }
+        MoveToNextTarget();
     }
 
     void Update()
@@ -40,6 +37,20 @@ public class SmoothFollow : MonoBehaviour
         {
             shouldMove = false; // Stop moving once the target is reached
         }
+    }
+
+    public void MoveToLastTarget()
+    {
+        if (targets.Count == 0) return;
+
+        int next = (currentTargetIndex - 1);
+        if(next < 0)
+        {
+            next = 3;
+        }
+        // Move to the next target in the list
+        currentTargetIndex = next;
+        shouldMove = true;
     }
 
     public void MoveToNextTarget()
