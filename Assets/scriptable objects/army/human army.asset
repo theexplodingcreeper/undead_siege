@@ -15,3 +15,14 @@ MonoBehaviour:
   units:
   - amount: 30
     type: {fileID: 11400000, guid: 0aa6403e1d841cc408f85113f677121f, type: 2}
+  formation:
+  - unit: []
+  - unit: []
+  - unit: []
+  - unit: []
+  - unit: []
+  - unit: []
+  - unit: []
+  - unit: []
+  - unit: []
+  - unit: []

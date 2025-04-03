@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName ="unit", fileName ="new unit")]
 public class UnitType : ScriptableObject
 {
+    public Sprite image;
     public RuntimeAnimatorController animations;
 
     public float range = 1;
